@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import route from "./routes/userRoute.js";
 import path from "path";
+import { fileURLToPath } from 'url';
 
 const app = express();
 app.use(bodyParser.json());
@@ -27,6 +28,9 @@ app.use("/api", route);
 app.get('/api/hello', (req, res) => {
   res.json({ msg: 'Hello from backend!' });
 });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('*', (req, res) => {
