@@ -1,0 +1,79 @@
+.userTable{
+    width:80%;
+    background-color:white;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 5px;
+    margin: 50px;
+    padding: 50px 50px 50px 50px;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
+.addButton{
+    text-decoration: none;
+    background-color: rgb(3, 152, 3);
+    color: white;
+    font-weight: 500;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 24px;
+    /* position: relative;
+    top: 32px;; */
+}
+
+.exportButton{
+    text-decoration: none;
+    background-color: grey;
+    color: white;
+    font-weight: 500;
+   /* box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065); */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 24px;
+    cursor: pointer;
+    /* position: relative;
+    top: 32px;; */
+}
+
+.userTable table{
+    width: 100%;
+    /* position: relative;
+    top: 50px; */
+    margin-top: 16px;
+    border-collapse: collapse;
+}
+
+.userTable table thead th{
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+}
+
+.userTable table tbody td{
+    padding: 10px;
+    text-align: center;
+}
+
+.actionButtons button{
+    border: 0;
+    outline: none;
+    background-color: red;
+    padding: 8px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actionButtons a{
+    background-color: green;
+    padding: 6px 10px;
+    color: white;
+    border-radius: 5px;
+    margin: 0 10px;
+    text-decoration: none;
+}
