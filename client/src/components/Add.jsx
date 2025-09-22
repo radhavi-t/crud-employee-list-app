@@ -46,7 +46,7 @@ const inputHandler = (e) => {
     };
         const token = localStorage.getItem("token"); 
         
-        axios.post("http://localhost:8000/api/create", payload,{
+        axios.post("/api/create", payload,{
             headers: {
             Authorization: `Bearer ${token}`  // JWT header
         }
