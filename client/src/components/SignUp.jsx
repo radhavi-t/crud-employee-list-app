@@ -14,7 +14,7 @@ const SignUp = () =>{
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try {
-            axios.post("http://localhost:8000/api/signup",form);
+            axios.post("/api/signup",form);
             alert("Signup successful!Please login.");
             navigate("/login"); //redirect to login
         } catch (err) {
