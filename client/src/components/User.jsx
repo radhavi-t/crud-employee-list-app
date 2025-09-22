@@ -27,7 +27,7 @@ const User = () =>{
     const fetchData = async () => {
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.get("http://localhost:8000/api/getAll",{
+            const response = await axios.get("/api/getAll",{
                 headers:{Authorization:`Bearer ${token}`}
             });
             console.log("Fetched users:", response.data);
@@ -53,7 +53,7 @@ const User = () =>{
         
         const token = localStorage.getItem("token"); 
 
-        axios.delete(`http://localhost:8000/api/delete/${userId}`,{
+        axios.delete(`/api/delete/${userId}`,{
             headers: {
             Authorization: `Bearer ${token}`  // JWT header
         }
@@ -72,7 +72,7 @@ const User = () =>{
     useEffect(() => {
         const token = localStorage.getItem("token"); 
 
-        axios.get("http://localhost:8000/api/grouped-users",{
+        axios.get("/api/grouped-users",{
             headers: {
             Authorization: `Bearer ${token}`  // JWT header
         }
