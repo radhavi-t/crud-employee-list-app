@@ -35,7 +35,7 @@ const Edit = ()=>{
 
     useEffect(() =>{
         const token = localStorage.getItem("token"); 
-        axios.get(`http://localhost:8000/api/getone/${id}`,{
+        axios.get(`/api/getone/${id}`,{
             headers: {
             Authorization: `Bearer ${token}`  // JWT header
         }
@@ -74,7 +74,7 @@ const Edit = ()=>{
     };
     
     const token = localStorage.getItem("token"); 
-    axios.put(`http://localhost:8000/api/update/${id}`, payload,{
+    axios.put(`/api/update/${id}`, payload,{
             headers: {
             Authorization: `Bearer ${token}`  // JWT header
         }
