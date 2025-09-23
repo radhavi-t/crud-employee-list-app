@@ -12,7 +12,7 @@ const User = () =>{
 
     const fetchData = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/api/getAll");
+            const response = await axios.get("/api/getAll");
             setUsers(response.data);
         } catch (error) {
             console.error("Error fetching users:", error);
