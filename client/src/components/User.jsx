@@ -41,6 +41,12 @@ const User = () =>{
     };
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        if(!token){
+            navigate("/");
+            return;
+        };
+        
         console.log("location.state changed:", location.state);
         fetchData();
         window.history.replaceState({}, document.title);
@@ -71,7 +77,10 @@ const User = () =>{
 
     useEffect(() => {
         const token = localStorage.getItem("token"); 
-
+        if(!token){
+            navigate("/");
+            return;
+        };
         axios.get("/api/grouped-users",{
             headers: {
             Authorization: `Bearer ${token}`  // JWT header
@@ -215,6 +224,13 @@ const User = () =>{
         }
     }
 
+    const handleLogout = () =>{
+        localStorage.removeItem("token");
+        setUsers([]);
+        setGroupedData([]);
+        navigate("/");
+        toast.success("Logged out successfully!", {position:"top-center"});
+    }
     return(
         <div className="userTable">
         <div>
@@ -225,6 +241,7 @@ const User = () =>{
                 <Link to={"/add"} className="addButton">Add User</Link>
                 <button className="exportButton" onClick={exportToExcel}>Export to Excel</button>
                 </div>
+                <button onClick={handleLogout} className="btn btn-danger">Logout</button>
             </div>
 
             <table border="1" cellPadding="10" style={{ borderCollapse: "collapse", width: "100%" }}>
