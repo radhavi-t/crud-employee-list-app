@@ -237,10 +237,10 @@ const User = () =>{
             <div className="headerSection">
                 <h2>Employee List</h2>
                 <p>Displaying employees from xyz app</p>
-                <div style={{display:"flex", gap: "16px", marginTop: "10px"}}>
+                <div style={{display:"flex", gap: "16px", marginTop: "10px", alignItems:"center", width:"100%"}}>
                 <Link to={"/add"} className="addButton">Add User</Link>
                 <button className="exportButton" onClick={exportToExcel}>Export to Excel</button>
-                <button onClick={handleLogout} className="btn btn-danger">Logout</button>
+                <button onClick={handleLogout} className="logoutButton">Logout</button>
                 </div>
             </div>
 
