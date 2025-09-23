@@ -35,6 +35,11 @@ const __dirname = path.dirname(__filename);
 const clientBuildPath = path.join(__dirname, "../client/build"); // go up one folder
 app.use(express.static(clientBuildPath));
 
+app.get("/ping", (req, res) => {
+  console.log("Ping received at", new Date().toISOString()); // optional log
+  res.status(200).json({ status: "alive", timestamp: new Date().toISOString() });
+});
+
 app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(clientBuildPath, "index.html"));
 });
