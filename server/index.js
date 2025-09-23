@@ -35,7 +35,7 @@ const __dirname = path.dirname(__filename);
 const clientBuildPath = path.join(__dirname, "../client/build"); // go up one folder
 app.use(express.static(clientBuildPath));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(clientBuildPath, 'index.html'));
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(clientBuildPath, "index.html"));
 });
 
