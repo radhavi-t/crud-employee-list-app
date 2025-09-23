@@ -16,7 +16,7 @@ const SignUp = () =>{
         try {
             axios.post("/api/signup",form);
             alert("Signup successful!Please login.");
-            navigate("/login"); //redirect to login
+            navigate("/"); //redirect to login
         } catch (err) {
             alert(err.response?.data?.msg || "Signup failed");
         } 

@@ -37,7 +37,7 @@ const Login = () =>{
                      <button type="submit">Login</button>
                 </div>
                 <div className="inputgroup">
-                     <Link to={"/"}>Not registered?Click here</Link>
+                     <Link to={"/signup"}>Not registered?Click here</Link>
                 </div>
             </form>
         </div>
