@@ -240,8 +240,8 @@ const User = () =>{
                 <div style={{display:"flex", gap: "16px", marginTop: "10px"}}>
                 <Link to={"/add"} className="addButton">Add User</Link>
                 <button className="exportButton" onClick={exportToExcel}>Export to Excel</button>
-                </div>
                 <button onClick={handleLogout} className="btn btn-danger">Logout</button>
+                </div>
             </div>
 
             <table border="1" cellPadding="10" style={{ borderCollapse: "collapse", width: "100%" }}>
