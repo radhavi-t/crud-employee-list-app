@@ -28,7 +28,7 @@ const User = () =>{
         const userToDelete = users.find(user => user._id === userId);
         console.log(userToDelete);
 
-        axios.delete(`http://localhost:8000/api/delete/${userId}`)
+        axios.delete(`/api/delete/${userId}`)
         .then((response) => {
             setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
             toast.success(response.data.msg, { position: "top-right" });
